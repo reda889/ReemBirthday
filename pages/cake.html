@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كعكة العيد</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('../images/bg2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cake-img {
+            width: 300px;
+            margin: 20px auto;
+        }
+        .btn {
+            background-color: #e91e63;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 18px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>كعكة عيد الميلاد!</h1>
+        <img id="cake" src="../images/cake_with_candles.png" class="cake-img">
+        <button id="blow-btn" class="btn">أطفئ الشموع!</button>
+        <a id="wish-btn" href="wish.html" class="btn hidden">اكتب أمنية</a>
+    </div>
+
+    <script>
+        document.getElementById('blow-btn').addEventListener('click', function() {
+            document.getElementById('cake').src = "../images/cake_no_candles.png";
+            this.classList.add('hidden');
+            document.getElementById('wish-btn').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

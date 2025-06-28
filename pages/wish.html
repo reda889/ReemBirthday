@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمنية عيد الميلاد</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('../images/bg3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .btn {
+            background-color: #e91e63;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ما هي أمنيتك لهذه السنة؟</h1>
+        <textarea id="wish-text" placeholder="اكتب أمنيتك هنا..."></textarea>
+        <button id="save-btn" class="btn">احفظ الأمنية</button>
+        <a href="eating.html" class="btn hidden" id="next-btn">استمر</a>
+    </div>
+
+    <script>
+        document.getElementById('save-btn').addEventListener('click', function() {
+            const wish = document.getElementById('wish-text').value;
+            
+            // هنا يمكنك إرسال الأمنية إلى قاعدة بيانات أو حفظها
+            // هذا مثال باستخدام localStorage (سيحفظ فقط على جهاز الزائر)
+            localStorage.setItem('birthday_wish', wish);
+            
+            alert('تم حفظ أمنيتك بنجاح!');
+            this.classList.add('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

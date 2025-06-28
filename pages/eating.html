@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تناول الكعكة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('../images/bg4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cake-img {
+            width: 300px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+        .btn {
+            background-color: #e91e63;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>لنأكل الكعكة معاً!</h1>
+        <p>اضغط على الكعكة لتأكل قطعة</p>
+        <img id="cake" src="../images/cake_slice6.png" class="cake-img" onclick="eatSlice()">
+        <a href="memories.html" class="btn hidden" id="next-btn">الذكريات</a>
+    </div>
+
+    <script>
+        let slices = 6;
+        const cakeImages = [
+            "../images/cake_slice6.png",
+            "../images/cake_slice5.png",
+            "../images/cake_slice4.png",
+            "../images/cake_slice3.png",
+            "../images/cake_slice2.png",
+            "../images/cake_slice1.png",
+            "../images/cake_slice0.png"
+        ];
+
+        function eatSlice() {
+            if (slices > 0) {
+                slices--;
+                document.getElementById('cake').src = cakeImages[slices];
+                
+                if (slices === 0) {
+                    document.getElementById('next-btn').classList.remove('hidden');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
